@@ -1,0 +1,3 @@
+父子项目
+
+参考：https://how2j.cn/k/idea/idea-parent-child/2051.html#nowhere

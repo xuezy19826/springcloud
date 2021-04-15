@@ -1,0 +1,17 @@
+# 设置端口号
+server:
+  port: 8761
+
+# 配置eureka服务注册中心
+eureka:
+  instance:
+    hostname: localhost # 主机名
+  client:
+    register-with-eureka: false # 表示是否注册到服务器。 因为它本身就是服务器，所以就无需把自己注册到服务器了。
+    fetchRegistry: false # 表示是否获取服务器的注册信息，和上面同理，这里也设置为 false。
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 自己作为服务器，公布出来的地址
+
+spring:
+  application:
+    name: eureka-server

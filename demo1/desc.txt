@@ -1,0 +1,17 @@
+参考地址：https://how2j.cn/k/springcloud/springcloud-single/2036.html
+day: 2021-04-15
+
+springcloud版本：Finchley   对应springboot 2.0.x
+
+一、单体结构
+   product-service
+   存在性能瓶颈，出问题需要重新打包部署等
+
+
+二、springcloud
+1、eruekaServer 服务注册中心
+2、productdataservice 数据服务
+3、product-view-service-ribbon
+    接下来，我们就要访问前面注册好的数据微服务了。 springcloud 提供了两种方式，一种是 Ribbon，一种是 Feign。
+    Ribbon 是使用 restTemplate 进行调用，并进行客户端负载均衡。 什么是客户端负载均衡呢？ 在前面 注册数据微服务 里，
+    注册了8001和8002两个微服务， Ribbon 会从注册中心获知这个信息，然后由 Ribbon 这个客户端自己决定是调用哪个，这个就叫做客户端负载均衡。
