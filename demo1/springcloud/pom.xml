@@ -16,6 +16,7 @@
     <module>eureka-Server</module>
     <module>product-data-service</module>
     <module>product-view-service-ribbon</module>
+    <module>product-view-service-feign</module>
   </modules>
 
   <!-- springboot使用2.0.x版本  对应springcloud版本为Finchley.RELEASE -->
@@ -33,6 +34,8 @@
     <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
     <hutool.version>4.3.1</hutool.version>
     <lomback.version>1.18.16</lomback.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
