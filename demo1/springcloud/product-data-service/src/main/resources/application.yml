@@ -2,10 +2,14 @@
 #server:
 #  port: 8001
 
-# 服务名
 spring:
   application:
+    # 服务名
     name: product-data-service
+  # 服务链路追踪
+  zipkin:
+    base-url: http://localhost:9411
+
 
 # 配置注册中心地址  与eurekaServer中的配置一致
 eureka:

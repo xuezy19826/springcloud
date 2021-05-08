@@ -1,5 +1,6 @@
 package cn.how2j.springcloud;
 
+import brave.sampler.Sampler;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.NetUtil;
@@ -7,6 +8,7 @@ import cn.hutool.core.util.NumberUtil;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
@@ -60,7 +62,19 @@ public class ProductDataServiceApplication {
             System.err.printf("端口%d被占用了，无法启动%n", port );
             System.exit(1);
         }
-
         new SpringApplicationBuilder(ProductDataServiceApplication.class).properties("server.port=" + port).run(args);
     }
+
+    /**
+     * @describe 配置抽样策略
+     * @author xuezy
+     * @date 2021/5/8 15:48
+     * @return brave.sampler.Sampler
+     */
+    @Bean
+    public Sampler defaultSampler(){
+        // 持续抽样
+        return Sampler.ALWAYS_SAMPLE;
+    }
+
 }
