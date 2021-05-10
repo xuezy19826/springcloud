@@ -1,5 +1,7 @@
 # 配置注册中心地址  与eurekaServer中的配置一致
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
@@ -15,6 +17,6 @@ spring:
       server:
         git:
           # 表示git地址
-          uri: https://github.com/how2j/springcloudConfig/
+          uri: https://github.com/xuezy19826/springcloud.git
           # 表示目录
-          searchPaths: respo
+          searchPaths: /demo1/springcloud/config/respo

@@ -16,4 +16,29 @@ springcloud版本：Finchley   对应springboot 2.0.x
   Ribbon 是使用 restTemplate 进行调用，并进行客户端负载均衡。 什么是客户端负载均衡呢？ 在前面 注册数据微服务 里，
   注册了8001和8002两个微服务， Ribbon 会从注册中心获知这个信息，然后由 Ribbon 这个客户端自己决定是调用哪个，这个就叫做客户端负载均衡。
 4、product-view-service-feign 封装好的ribbon
-5、config-server 配置服务器【有问题，无法访问作者gitHub上的内容】
+5、config-server 配置服务器【有可能会有问题，访问作者gitHub上的内容不太稳定】
+   git访问地址需要配置自己gitHub上的地址，新建的cofig文件夹里面有配置信息
+
+   【config-server 配置】
+   cloud:
+       config:
+         # 表示分支
+         label: master
+         server:
+           git:
+             # 表示git地址
+             uri: https://github.com/xuezy19826/springcloud.git
+             # 表示目录
+             searchPaths: /demo1/springcloud/config/respo
+
+6、改造product-view-service-feign
+   config文件夹中，respo下的文件名须贺feign客户端服务名称保持一致
+   【product-view-service-feign 配置】
+   spring:
+     application:
+       # 服务名称
+       name: product-view-service-feign
+
+   最终名称为：product-view-service-feign-dev.properties
+
+   内容为vesion版本信息
