@@ -1,5 +1,6 @@
 参考地址：https://how2j.cn/k/springcloud/springcloud-single/2036.html
-day: 2021-04-15
+
+******************************* 到第五步配置config失败 *******************************
 
 springcloud版本：Finchley   对应springboot 2.0.x
 
@@ -27,9 +28,9 @@ springcloud版本：Finchley   对应springboot 2.0.x
          server:
            git:
              # 表示git地址
-             uri: https://github.com/xuezy19826/springcloud.git
+             uri: https://github.com/xuezy19826/springcloud/demo1/springcloud/config/
              # 表示目录
-             searchPaths: /demo1/springcloud/config/respo
+             searchPaths: respo
 
 6、改造product-view-service-feign
    config文件夹中，respo下的文件名须贺feign客户端服务名称保持一致
